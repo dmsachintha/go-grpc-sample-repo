@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package shop.service.v1;
+
+option go_package = "./;pb";
+
+message ViewCatalogRequest {
+	string catalog_type = 1;
+}
+
+message ViewCatalogResponse {
+	int32 code = 1;
+	string json_string = 2;
+}
+
+service CatalogService {
+	rpc List(ViewCatalogRequest) returns (ViewCatalogResponse);
+}
+
+
